@@ -1,0 +1,27 @@
+import express from 'express';
+const router= express.Router();
+import { update_resume, add_skill, delete_skill, add_project ,set_portfolio,delete_portfolio,delete_project ,add_experience,delete_experience,update_about, add_education ,delete_education ,update_gfg,update_leetcode,get_portfolio,update_linkedin,update_github,update_name, update_profilePic,update_instagram,update_twitter ,update_email,website_link} from '../controllers/data.controller.js';
+router.put('/update_name/:username',update_name);
+router.put('/update_about/:username',update_about);
+router.post('/set_portfolio',set_portfolio);
+router.get('/get_portfolio/:username',get_portfolio);
+router.delete('/delete_portfolio/:username',delete_portfolio);
+router.put('/update_resume/:username',update_resume);
+router.post('/add_skill/:username',add_skill);
+router.delete('/delete_skill/:username',delete_skill);
+router.post('/add_project/:username',add_project);
+router.delete('/delete_project/:username',delete_project);
+router.post('/add_experience/:username',add_experience);
+router.delete('/delete_experience/:username',delete_experience);
+router.post('/add_education/:username',add_education);
+router.delete('/delete_education/:username',delete_education);
+router.put('/update_gfg/:username',update_gfg);
+router.put('/update_leetcode/:username',update_leetcode);
+router.put('/update_linkedin/:username',update_linkedin);
+router.put('/update_github/:username',update_github);
+router.put('/update_profilePic/:username',update_profilePic);
+router.put('/update_instagram/:username',update_instagram);
+router.put('/update_twitter/:username',update_twitter);
+router.put('/update_email/:username',update_email);
+router.get('/get_link',website_link)
+export default router;
