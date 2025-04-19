@@ -3,7 +3,7 @@ const PortfolioSchema = new mongoose.Schema({
     username:String,
     name: String,
     resume: String, // Resume link
-    profilePic: {type:String ,default: "https://res.cloudinary.com/dmmwlsock/image/upload/v1742511312/portfolio/jd16vkexyn6q64ooltg5.jpg"}, // Cloudinary URL
+    profilePic: {type:String ,default: "https://res.cloudinary.com/dmmwlsock/image/upload/v1745085967/profile_aur9se.png"}, // Cloudinary URL
     about: String,
     linkedin: String,
     github: String,
