@@ -26,12 +26,15 @@ try{
 `
     const subject="Acknowledgement of message";
     send_mail(mail,message,subject);
-    const currentDate = new Date();
-const offset = 5.5 * 60 * 60 * 1000;
+const currentDate = new Date();
+const offset = 5.5 * 60 * 60 * 1000; // 5 hours 30 minutes
 const newDate = new Date(currentDate.getTime() + offset);
-const formattedDate = newDate.toLocaleString();
+const formattedDate = newDate.toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+});
 
-console.log(formattedDate);
 
     // mail to admin
 const admin_message = `
