@@ -29,19 +29,29 @@ try{
 const currentDate = new Date();
 const offset = 5.5 * 60 * 60 * 1000; // 5 hours 30 minutes
 const newDate = new Date(currentDate.getTime() + offset);
+
+// Format date
 const formattedDate = newDate.toLocaleDateString('en-GB', {
   day: 'numeric',
   month: 'long',
   year: 'numeric'
 });
 
+// Format time
+const formattedTime = newDate.toLocaleTimeString('en-US', {
+  hour: 'numeric',
+  minute: '2-digit',
+  hour12: true
+});
+
+const finalOutput = `${formattedDate}, ${formattedTime}`;
 
     // mail to admin
 const admin_message = `
     <h1> Dear ${user.name || "User"}  </h1>
     <p><strong>You have received a message from:</strong> mail: ${mail} name: ${user_data.name}</p>
     <p><strong>Message:</strong> ${user_data.msg}</p>
-    <p><strong>Sent on:</strong> ${formattedDate}</p>
+    <p><strong>Sent on:</strong> ${finalOutput}</p>
 `;
     const admin_subject="New message from portfolio website";
     send_mail(user.email,admin_message,admin_subject);
