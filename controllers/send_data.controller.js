@@ -26,11 +26,19 @@ try{
 `
     const subject="Acknowledgement of message";
     send_mail(mail,message,subject);
+    const currentDate = new Date();
+const offset = 5.5 * 60 * 60 * 1000;
+const newDate = new Date(currentDate.getTime() + offset);
+const formattedDate = newDate.toLocaleString();
+
+console.log(formattedDate);
+
     // mail to admin
 const admin_message = `
+    <h1> Dear ${user.name || "User"}  </h1>
     <p><strong>You have received a message from:</strong> mail: ${mail} name: ${user_data.name}</p>
     <p><strong>Message:</strong> ${user_data.msg}</p>
-    <p><strong>Sent on:</strong> ${new Date().toLocaleString()}</p>
+    <p><strong>Sent on:</strong> ${formattedDate}</p>
 `;
     const admin_subject="New message from portfolio website";
     send_mail(user.email,admin_message,admin_subject);
