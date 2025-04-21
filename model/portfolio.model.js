@@ -51,10 +51,11 @@ const PortfolioSchema = new mongoose.Schema({
             name:String,
             mail:String,
             msg:String,
-            date:{
-                type:Date,
-                default:Date.now+ (5 * 60 + 30) * 60 * 1000;
+            date: {
+                type: Date,
+                default: () => new Date(Date.now() + 5.5 * 60 * 60 * 1000) // adds 5.5 hours
             }
+
         }
     ],
     leetcode_id:String,
