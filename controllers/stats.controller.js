@@ -16,18 +16,18 @@ try {
             medium:0,
             hard:0
         };
-        if(gfg_id){
-            try{
-            const gfg_response = await fetch("https://geeks-for-geeks-api.vercel.app/"+gfg_id);
-            const gfg_obj = await gfg_response.json();
-            dsa_stats.totalsolved=gfg_obj.info.totalProblemsSolved;
-            dsa_stats.easy=gfg_obj.solvedStats.easy.count+gfg_obj.solvedStats.basic.count+gfg_obj.solvedStats.school.count;
-            dsa_stats.medium=gfg_obj.solvedStats.medium.count;
-            dsa_stats.hard=gfg_obj.solvedStats.hard.count;
-            }
-            catch(error){
-            }
-        }
+        // if(gfg_id){
+        //     try{
+        //     const gfg_response = await fetch("https://geeks-for-geeks-api.vercel.app/"+gfg_id);
+        //     const gfg_obj = await gfg_response.json();
+        //     dsa_stats.totalsolved=gfg_obj.info.totalProblemsSolved;
+        //     dsa_stats.easy=gfg_obj.solvedStats.easy.count+gfg_obj.solvedStats.basic.count+gfg_obj.solvedStats.school.count;
+        //     dsa_stats.medium=gfg_obj.solvedStats.medium.count;
+        //     dsa_stats.hard=gfg_obj.solvedStats.hard.count;
+        //     }
+        //     catch(error){
+        //     }
+        // }
         if(leetcode_id){
             try{
                 const leetcode_response =await fetch("https://leetcode-api-faisalshohag.vercel.app/"+leetcode_id);
