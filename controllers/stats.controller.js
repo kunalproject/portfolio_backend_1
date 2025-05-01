@@ -28,21 +28,21 @@ try {
             catch(error){
             }
         }
-        // if(leetcode_id){
-        //     try{
-        //         const leetcode_response =await fetch("https://leetcode-api-faisalshohag.vercel.app/"+leetcode_id);
-        //     const leetcode_obj = await leetcode_response.json();
-        //     if(! leetcode_obj.errors){
-        //     dsa_stats.totalsolved+=leetcode_obj.totalSolved;
-        //     dsa_stats.easy+=leetcode_obj.easySolved;
-        //     dsa_stats.medium+=leetcode_obj.mediumSolved;
-        //     dsa_stats.hard+=leetcode_obj.hardSolved;   
-        //     }
+        if(leetcode_id){
+            try{
+                const leetcode_response =await fetch("https://alfa-leetcode-api.onrender.com/"+leetcode_id+"/solved");
+            const leetcode_obj = await leetcode_response.json();
+            if(! leetcode_obj.errors){
+            dsa_stats.totalsolved+=leetcode_obj.solvedProblem;
+            dsa_stats.easy+=leetcode_obj.easySolved;
+            dsa_stats.medium+=leetcode_obj.mediumSolved;
+            dsa_stats.hard+=leetcode_obj.hardSolved;   
+            }
          
-        //     }
-        //     catch(error){
-        //     }
-        // }
+            }
+            catch(error){
+            }
+        }
 
         res.json((!gfg_id && !leetcode_id)?{"stats":null}:{ "stats":dsa_stats});
     } catch (error) {
