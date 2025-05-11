@@ -21,7 +21,7 @@ export const dsa_stats = async (req, res) => {
     };
 
     // Fetch LeetCode Stats
-    if (!leetcode_id) {
+    if (leetcode_id) {
       await getLeetCodeStats(leetcode_id, dsa_stats);
     }
 
