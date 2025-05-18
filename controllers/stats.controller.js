@@ -21,9 +21,9 @@ export const dsa_stats = async (req, res) => {
     };
 
     // Fetch LeetCode Stats
-    if (!leetcode_id) {
-      await getLeetCodeStats(leetcode_id, dsa_stats);
-    }
+    // if (leetcode_id) {
+    //   await getLeetCodeStats(leetcode_id, dsa_stats);
+    // }
 
     // Fetch GFG Stats
     if (gfg_id) {
